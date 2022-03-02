@@ -14,4 +14,6 @@ public interface ExtWorkspaceMapper {
     void setDefaultMessageTask(@Param("workspaceId") String workspaceId);
 
     List<Workspace> getWorkspaceByUserId(@Param("userId")String userId);
+
+    List<String> getWorkspaceIds();
 }

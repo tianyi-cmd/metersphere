@@ -278,8 +278,10 @@ public class IssueTemplateService extends TemplateBaseService {
     private String getCustomFieldColums(List<DetailColumn> columns, IssueTemplate templateWithBLOBs, List<CustomFieldTemplate> customFields) {
         for (CustomFieldTemplate customFieldTemplate : customFields) {
             CustomField customField = customFieldMapper.selectByPrimaryKey(customFieldTemplate.getFieldId());
-            customField.setDefaultValue(customFieldTemplate.getDefaultValue());
-            List<DetailColumn> columnsField = ReflexObjectUtil.getColumns(customField, SystemReference.issueFieldColumns);
+            CustomFieldDao customFieldDao = new CustomFieldDao();
+            BeanUtils.copyBean(customFieldDao, customField);
+            customFieldDao.setDefaultValue(customFieldTemplate.getDefaultValue());
+            List<DetailColumn> columnsField = ReflexObjectUtil.getColumns(customFieldDao, SystemReference.issueFieldColumns);
             columns.addAll(columnsField);
         }
         List<DetailColumn> columnIssues = ReflexObjectUtil.getColumns(templateWithBLOBs, SystemReference.issueFieldColumns);

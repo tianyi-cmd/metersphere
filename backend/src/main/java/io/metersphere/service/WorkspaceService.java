@@ -322,4 +322,8 @@ public class WorkspaceService {
 
         return resource;
     }
+
+    public List<String> getWorkspaceIds() {
+        return extWorkspaceMapper.getWorkspaceIds();
+    }
 }
