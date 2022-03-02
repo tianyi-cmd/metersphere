@@ -168,7 +168,7 @@
         // custom template field id
         let id = val.slice(6);
         this.fieldType = "custom";
-        this.$get("/custom/field/template/" + id, res => {
+        this.$get("/custom/field/get/" + id, res => {
           this.customField = res ? res.data : {};
           this.customField.options = JSON.parse(this.customField.options);
           if (this.customField.type === 'checkbox' || this.customField.type === 'multipleMember') {
