@@ -7,7 +7,7 @@
     </el-row>
     <el-row id="header-top" type="flex" justify="space-between" align="middle" v-if="isMenuShow">
       <el-col :span="12">
-        <img :src="'/display/file/logo'" class="logo" alt="">
+        <img :src="'https://www.fit2cloud.com/metersphere/images/logo/logo-light-MeterSphere.svg'" class="logo" alt="">
         <ms-top-menus :color="color"/>
       </el-col>
 

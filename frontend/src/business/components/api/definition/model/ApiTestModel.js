@@ -834,7 +834,13 @@ export class Text extends AssertionType {
 export class BeanShellProcessor extends BaseConfig {
   constructor(options) {
     super();
+    this.resourceId = uuid();
+    this.active = false;
+    this.type = "BeanShellProcessor";
     this.script = undefined;
+    this.scriptLanguage = "beanshell";
+    this.enable = true;
+    this.hashTree = [];
     this.set(options);
   }
 }

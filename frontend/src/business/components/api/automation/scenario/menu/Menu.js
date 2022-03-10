@@ -1,5 +1,5 @@
 import {ELEMENT_TYPE} from "@/business/components/api/automation/scenario/Setting";
-import {Assertions, ConstantTimer, Extract, IfController, JSR223Processor, JDBCProcessor,LoopController, TransactionController} from "@/business/components/api/definition/model/ApiTestModel";
+import {Assertions, ConstantTimer, Extract, IfController, JSR223Processor,BeanShellProcessor, JDBCProcessor,LoopController, TransactionController} from "@/business/components/api/definition/model/ApiTestModel";
 
 export function buttons() {
   let buttons = [
@@ -61,6 +61,17 @@ export function buttons() {
       icon: "code",
       click: () => {
         this.addComponent('JSR223Processor')
+      }
+    },
+    {
+      title: this.$t('api_test.automation.BeanShellProcessor'),
+      show: this.showButton("BeanShellProcessor"),
+      // titleColor: "#808080",
+      titleColor: "#AFAFB3",
+      titleBgColor: "#F1EEE9",
+      icon: "code",
+      click: () => {
+        this.addComponent('BeanShellProcessor')
       }
     },
     {
@@ -158,6 +169,10 @@ export function setComponent(type, _this) {
     case ELEMENT_TYPE.JSR223Processor:
       _this.selectedTreeNode !== undefined ? _this.selectedTreeNode.hashTree.push(new JSR223Processor()) :
         _this.scenarioDefinition.push(new JSR223Processor());
+      break;
+    case ELEMENT_TYPE.BeanShellProcessor:
+      _this.selectedTreeNode !== undefined ? _this.selectedTreeNode.hashTree.push(new BeanShellProcessor()) :
+        _this.scenarioDefinition.push(new BeanShellProcessor());
       break;
     case ELEMENT_TYPE.JSR223PreProcessor:
       _this.selectedTreeNode !== undefined ? _this.selectedTreeNode.hashTree.push(new JSR223Processor({type: "JSR223PreProcessor"})) :

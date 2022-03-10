@@ -939,6 +939,7 @@ export default {
       transcation_controller: "Transcation controller",
       scenario_import: "Scenario import",
       customize_script: "Customize script",
+      BeanShellProcessor: "BeanShellProcessor",
       customize_req: "Customize req",
       reference_info: "Reference info",
       scenario_test: "Scenario test",

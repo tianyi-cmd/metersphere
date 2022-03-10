@@ -12,6 +12,7 @@ import io.metersphere.api.dto.definition.request.controller.MsIfController;
 import io.metersphere.api.dto.definition.request.controller.MsLoopController;
 import io.metersphere.api.dto.definition.request.controller.MsTransactionController;
 import io.metersphere.api.dto.definition.request.extract.MsExtract;
+import io.metersphere.api.dto.definition.request.processors.MsBeanShellProcessor;
 import io.metersphere.api.dto.definition.request.processors.MsJSR223Processor;
 import io.metersphere.api.dto.definition.request.processors.post.MsJDBCPostProcessor;
 import io.metersphere.api.dto.definition.request.processors.post.MsJSR223PostProcessor;
@@ -59,6 +60,7 @@ import java.util.stream.Collectors;
         @JsonSubTypes.Type(value = MsHTTPSamplerProxy.class, name = "HTTPSamplerProxy"),
         @JsonSubTypes.Type(value = MsHeaderManager.class, name = "HeaderManager"),
         @JsonSubTypes.Type(value = MsJSR223Processor.class, name = "JSR223Processor"),
+        @JsonSubTypes.Type(value = MsBeanShellProcessor.class, name = "BeanShellProcessor"),
         @JsonSubTypes.Type(value = MsJSR223PostProcessor.class, name = "JSR223PostProcessor"),
         @JsonSubTypes.Type(value = MsJSR223PreProcessor.class, name = "JSR223PreProcessor"),
         @JsonSubTypes.Type(value = MsJDBCPreProcessor.class, name = "JDBCPreProcessor"),
@@ -79,7 +81,7 @@ import java.util.stream.Collectors;
         @JsonSubTypes.Type(value = MsJmeterElement.class, name = "JmeterElement"),
 
 })
-@JSONType(seeAlso = {MsHTTPSamplerProxy.class, MsHeaderManager.class, MsJSR223Processor.class, MsJSR223PostProcessor.class, MsJDBCPreProcessor.class, MsJDBCPostProcessor.class,
+@JSONType(seeAlso = {MsHTTPSamplerProxy.class, MsHeaderManager.class, MsBeanShellProcessor.class, MsJSR223Processor.class, MsJSR223PostProcessor.class, MsJDBCPreProcessor.class, MsJDBCPostProcessor.class,
         MsJSR223PreProcessor.class, MsTestPlan.class, MsThreadGroup.class, MsAuthManager.class, MsAssertions.class,
         MsExtract.class, MsTCPSampler.class, MsDubboSampler.class, MsJDBCSampler.class, MsConstantTimer.class, MsIfController.class, MsTransactionController.class, MsScenario.class, MsLoopController.class, MsJmeterElement.class}, typeKey = "type")
 @Data

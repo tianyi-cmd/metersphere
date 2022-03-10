@@ -140,13 +140,14 @@
   import {KeyValue} from "../../model/ApiTestModel";
   import MsInputTag from "@/business/components/api/automation/scenario/MsInputTag";
   import MsJsr233Processor from "../../../automation/scenario/component/Jsr233Processor";
+  import MsBeanShellProcessor from "../../../automation/scenario/component/BeanShellProcessor";
   import MsSelectTree from "../../../../common/select-tree/SelectTree";
   import MsChangeHistory from "../../../../history/ChangeHistory";
   import {getCurrentProjectID, getUUID} from "@/common/js/utils";
 
   export default {
     name: "MsAddCompleteHttpApi",
-    components: {MsJsr233Processor, MsResponseText, MsApiRequestForm, MsInputTag, MsSelectTree,MsChangeHistory},
+    components: {MsJsr233Processor,MsBeanShellProcessor, MsResponseText, MsApiRequestForm, MsInputTag, MsSelectTree,MsChangeHistory},
     data() {
       let validateURL = (rule, value, callback) => {
         if (!this.httpForm.path.startsWith("/") || this.httpForm.path.match(/\s/) != null) {

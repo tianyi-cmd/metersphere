@@ -49,6 +49,7 @@ import {getCurrentProjectID, getUUID} from "@/common/js/utils";
 import MsApiVariable from "../../ApiVariable";
 import MsInstructionsIcon from "../../../../../common/components/MsInstructionsIcon";
 import Jsr233ProcessorContent from "../../../../automation/scenario/common/Jsr233ProcessorContent";
+import BeanShellProcessorContent from "../../../../automation/scenario/common/BeanShellProcessorContent";
 import JSR223PreProcessor from "../../jmeter/components/pre-processors/jsr223-pre-processor";
 import ApiDefinitionStepButton from "../components/ApiDefinitionStepButton";
 import TcpXmlTable from "@/business/components/api/definition/components/complete/table/TcpXmlTable";
@@ -60,6 +61,7 @@ export default {
     TcpXmlTable,
     ApiDefinitionStepButton,
     Jsr233ProcessorContent,
+    BeanShellProcessorContent,
     MsInstructionsIcon,
     MsApiVariable,
     MsApiScenarioVariables,

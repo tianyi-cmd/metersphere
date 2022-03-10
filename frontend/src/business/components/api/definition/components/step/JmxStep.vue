@@ -43,6 +43,7 @@
   import {getUUID} from "@/common/js/utils";
   import BatchAddParameter from "../basis/BatchAddParameter";
   import MsJsr233Processor from "../../../automation/scenario/component/Jsr233Processor";
+  import MsBeanShellProcessor from "../../../automation/scenario/component/BeanShellProcessor";
   import MsJdbcProcessor from "@/business/components/api/automation/scenario/component/JDBCProcessor";
 
   export default {
@@ -50,6 +51,7 @@
     components: {
       MsJdbcProcessor,
       MsJsr233Processor,
+      MsBeanShellProcessor,
       BatchAddParameter,
       MsApiExtract,
       MsApiAssertions

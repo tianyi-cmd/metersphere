@@ -5,7 +5,7 @@
         <div class="content">
           <div class="title">
             <div class="title-img">
-              <img :src="'/display/file/loginLogo'" alt="">
+              <img :src="'https://www.fit2cloud.com/metersphere/images/logo/logo-light-MeterSphere.svg'" alt="">
             </div>
             <div class="welcome">
               <span>{{ loginTitle }}</span>
@@ -48,7 +48,7 @@
 
       <el-col :span="12">
         <div class="content">
-          <img class="login-image" :src="'/display/file/loginImage'" alt="">
+          <img class="login-image" :src="'https://gd-pub.jinshujufiles.com/hi/20210220172311_23b525'" alt="">
         </div>
       </el-col>
 

@@ -2,7 +2,7 @@
   <div class="request-form">
     <keep-alive>
       <component v-bind:is="component" :isMax="isMax" :show-btn="showBtn" :expandedNode="expandedNode"
-                 :scenario="scenario" :controller="scenario" :timer="scenario" :assertions="scenario" :extract="scenario" :jsr223-processor="scenario" :request="scenario" :currentScenario="currentScenario" :currentEnvironmentId="currentEnvironmentId" :node="node"
+                 :scenario="scenario" :controller="scenario" :timer="scenario" :assertions="scenario" :extract="scenario" :jsr223-processor="scenario" :beanshell-processor="scenario" :request="scenario" :currentScenario="currentScenario" :currentEnvironmentId="currentEnvironmentId" :node="node"
                  :draggable="draggable" :title="title" :color="titleColor" :background-color="backgroundColor" @suggestClick="suggestClick(node)" :response="response"
                  @remove="remove" @copyRow="copyRow" @refReload="refReload" @openScenario="openScenario" :project-list="projectList" :env-map="envMap" :message="message"/>
     </keep-alive>
@@ -29,6 +29,7 @@
       JmeterElementComponent,
       MsConstantTimer: () => import("./ConstantTimer"),
       MsJsr233Processor: () => import("./Jsr233Processor"),
+      MsBeanShellProcessor: () => import("./BeanShellProcessor"),
       MsApiAssertions: () => import("../../../definition/components/assertion/ApiAssertions"),
       MsApiExtract: () => import("../../../definition/components/extract/ApiExtract"),
       MsJdbcProcessor: () => import("@/business/components/api/automation/scenario/component/JDBCProcessor"),
@@ -79,6 +80,9 @@
             break;
           case ELEMENT_TYPE.JSR223Processor:
             name = this.getComponent(ELEMENT_TYPE.JSR223Processor);
+            break;
+          case ELEMENT_TYPE.BeanShellProcessor:
+            name = this.getComponent(ELEMENT_TYPE.BeanShellProcessor);
             break;
           case ELEMENT_TYPE.JSR223PreProcessor:
             name = this.getComponent(ELEMENT_TYPE.JSR223PreProcessor);
@@ -141,6 +145,11 @@
           this.titleColor = "#1483F6";
           this.backgroundColor = "#F2ECF3";
           return "MsJdbcProcessor";
+        } else if (type === ELEMENT_TYPE.BeanShellProcessor){
+          this.title = this.$t('api_test.automation.BeanShellProcessor');
+          this.titleColor = "#AFAFB3";
+          this.backgroundColor = "#F1EEE9";
+          return "MsBeanShellProcessor";
         } else {
           this.title = this.$t('api_test.automation.customize_script');
           this.titleColor = "#7B4D12";

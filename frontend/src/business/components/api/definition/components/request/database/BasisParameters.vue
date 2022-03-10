@@ -99,11 +99,13 @@
   import {getCurrentProjectID} from "@/common/js/utils";
   import {getUUID} from "@/common/js/utils";
   import MsJsr233Processor from "../../../../automation/scenario/component/Jsr233Processor";
+  import MsBeanShellProcessor from "../../../../automation/scenario/component/BeanShellProcessor";
 
   export default {
     name: "MsDatabaseConfig",
     components: {
       MsJsr233Processor,
+      MsBeanShellProcessor,
       MsApiScenarioVariables,
       MsCodeEdit,
       ApiRequestMethodSelect, MsApiExtract, MsApiAssertions, MsApiKeyValue, ApiEnvironmentConfig

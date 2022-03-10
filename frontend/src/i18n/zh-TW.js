@@ -945,6 +945,7 @@ export default {
       transcation_controller: "事務控制器",
       scenario_import: "場景導入",
       customize_script: "自定義腳本",
+      BeanShellProcessor: "beanShell腳本",
       customize_req: "自定義請求",
       reference_info: "請選擇接口或用例",
       scenario_test: "場景",
